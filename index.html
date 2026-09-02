@@ -321,7 +321,7 @@ code{
 @media print{.data-ctx{background:#fff;border:1px solid #ccc;padding:8px 28px;margin:0 28px 12px;border-radius:6px;}}
 
 </style>
-<script>window.__API_BASE__ = %VITE_API_BASE%;</script>
+<!-- <script>window.__API_BASE__ = %VITE_API_BASE%;</script> -->
 </head>
 <body>
 <div class="topbar">
@@ -8813,7 +8813,7 @@ let state = {};
 let noteTimers = {};
 
 async function api(path, options={}) {
-  const res = await fetch("https://prop-qa-backend.vercel.app/" + path, {
+  const res = await fetch("https://prop-qa-backend.vercel.app" + path, {
     ...options,
     headers: { 'Content-Type': 'application/json', ...(options.headers || {}) }
   });
