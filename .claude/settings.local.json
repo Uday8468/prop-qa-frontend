@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node --input-type=module -e \"import\\('./src/data/tests.js'\\).then\\(m => { const p = m.PARTS; let total=0; let sectionsTotal=0; p.forEach\\(part => { const tests = part.sections.reduce\\(\\(a,s\\) => a + s.tests.length, 0\\); sectionsTotal += part.sections.length; total += tests; console.log\\(part.id, part.title, '- sections:', part.sections.length, '- tests:', tests, '- expected count:', part.count\\); }\\); console.log\\('TOTAL TESTS:', total\\); console.log\\('TOTAL SECTIONS:', sectionsTotal\\); }\\).catch\\(e => { console.error\\('ERR:', e.message\\); process.exit\\(1\\); }\\);\")",
+      "Bash(node -e \"const {PARTS} = require\\('c:/Users/adity/Downloads/PropPlus-QA-Frontend/frontend/src/data/tests.js'.replace\\('.js','.mjs'\\)\\); console.log\\(PARTS.length\\);\")",
+      "Bash(node --input-type=module -e \"import {PARTS} from 'file:///c:/Users/adity/Downloads/PropPlus-QA-Frontend/frontend/src/data/tests.js'; console.log\\('parts:', PARTS.length, 'total tests:', PARTS.reduce\\(\\(s,p\\)=>s+p.sections.reduce\\(\\(a,b\\)=>a+b.tests.length,0\\),0\\)\\);\")",
+      "Bash(npm install *)",
+      "Bash(npx vite *)"
+    ]
+  }
+}
