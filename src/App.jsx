@@ -5,7 +5,6 @@ import TopBar from './components/TopBar.jsx';
 import TOC from './components/TOC.jsx';
 import PartPanel from './components/PartPanel.jsx';
 
-const POLL_MS = 2000;
 const BOARD_ID = new URLSearchParams(location.search).get('board') || 'default';
 
 const ALL_IDS_BY_PART = PARTS.reduce((acc, p) => {
@@ -30,8 +29,6 @@ export default function App() {
 
   useEffect(() => {
     refresh();
-    const id = setInterval(refresh, POLL_MS);
-    return () => clearInterval(id);
   }, [refresh]);
 
   const handleMark = useCallback(async (testId, status) => {
